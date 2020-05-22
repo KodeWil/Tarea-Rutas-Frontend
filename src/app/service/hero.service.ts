@@ -65,7 +65,7 @@ export class HeroService {
     ];
 
     constructor(){
-        console.log("Servicio listo para usar!!");
+        
     }
 
     //getHeros(){
