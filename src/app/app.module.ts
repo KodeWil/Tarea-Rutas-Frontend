@@ -17,6 +17,8 @@ import { APP_ROUTING } from './app.routes';
 import { HeroService } from './service/hero.service';
 import { HeroDetailsComponent } from './components/hero-details/hero-details.component';
 import { HeroesResultsComponent } from './components/heroes-results/heroes-results.component';
+import { RouterModule, Routes } from '@angular/router';
+
 
 
 @NgModule({
@@ -36,6 +38,7 @@ import { HeroesResultsComponent } from './components/heroes-results/heroes-resul
   providers: [
     HeroService
   ],
+  exports: [RouterModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
