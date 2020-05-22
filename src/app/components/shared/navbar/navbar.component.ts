@@ -12,10 +12,8 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     
   }
-  buscarHeroe(palabra:string){
-    console.log(palabra),
-    this.router.navigate(['results', palabra]),
-    console.log(palabra);
+  buscarHeroe(resultado: string){
+    this.router.navigate(['results', resultado])
   }
 
 }

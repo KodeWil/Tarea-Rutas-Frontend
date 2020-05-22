@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {HeroService, Hero} from 'src/app/service/hero.service'
-import { ActivatedRoute} from '@angular/router';
+import { Router, ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-heroes-results',
@@ -11,13 +11,15 @@ export class HeroesResultsComponent implements OnInit {
   heroes: Hero[];
   constructor(
     private getHeroes: HeroService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private _route: Router
   ) { }
 
   ngOnInit(): void {
     this.heroes = this.getHeroes.buscarHeroe(
-      this.route.snapshot.paramMap.get('palabra')
+      this.route.snapshot.paramMap.get('resultado')
     );
   }
+
 
 }

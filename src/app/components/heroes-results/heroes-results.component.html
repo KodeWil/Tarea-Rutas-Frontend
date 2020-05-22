@@ -1,14 +1,12 @@
-<h1>Resultados de busqueda</h1>
+<h1>Results</h1>
 <div class="card-columns">
-    <div class="card animated fadeIn fast" *ngFor="let hero of heroes; let idx = index;">
+    <div class="card animated fadeIn fast" *ngFor="let hero of heroes;">
         <!-- <img src="{{heros.img}}" class="card-img-top" alt="{{heros.nombre}}"> -->
         <img [src]="hero.img" class="card-img-top" [alt]="hero.nombre">
         <div class="card-body">
             <h5 class="card-title">{{hero.nombre}}</h5>
             <p class="card-text">{{hero.bio}}</p>
             <p class="card-text"><small class="text-muted">{{hero.aparicion}}</small></p>
-            <button type="button" (click)="verHeroe(idx)" class="btn btn-outline-primary btn-block">Ver mas...</button>
-            <a [routerLink]="['/detalles',idx]" class="btn btn-outline-primary btn-block"> Ver mas ...</a>
         </div>
     </div>
 </div>
