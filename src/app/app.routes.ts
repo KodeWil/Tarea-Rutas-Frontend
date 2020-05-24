@@ -3,16 +3,20 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
+import { VillainsComponent } from './components/villains/villains.component';
 import { HeroDetailsComponent } from './components/hero-details/hero-details.component';
 import { HeroesResultsComponent } from './components/heroes-results/heroes-results.component';
+import { VillainDetailsComponent } from './components/villain-details/villain-details.component';
 
 
 const APP_ROUTE: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'about', component: AboutComponent },
     { path: 'heroes', component: HeroesComponent },
+    { path: 'villains', component: VillainsComponent },
     { path: 'results/:resultado', component: HeroesResultsComponent },
     { path: 'detalles/:id', component:  HeroDetailsComponent },
+    { path: 'detallesv/:id', component:  VillainDetailsComponent },
     { path: '**', pathMatch: 'full', redirectTo:'home' }
 ];
 

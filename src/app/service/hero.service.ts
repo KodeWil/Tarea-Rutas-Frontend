@@ -64,6 +64,66 @@ export class HeroService {
             }
     ];
 
+    private villain:Hero[]=
+        [
+            {
+              nombre: "Black Manta",
+              bio: "Aquaman enemy.",
+              img: "assets/img/Black_Manta.png",
+              aparicion: "1941-11-01",
+              casa:"DC",
+              indice:0
+            },
+            {
+              nombre: "Joker",
+              bio: "Payaso loco enemigo de Batman.",
+              img: "assets/img/joker.png",
+              aparicion: "1939-05-01",
+              casa:"DC",
+              indice:1
+            },
+            {
+              nombre: "Kingpin",
+              bio: "Archienemigo adinerado de Daredevil.",
+              img: "assets/img/kingpin.png",
+              aparicion: "1964-01-01",
+              casa: "Marvel",
+              indice:2
+            },
+            {
+              nombre: "Abomination",
+              bio: "Contraparte malvada de Hulk",
+              img: "assets/img/abomination.png",
+              aparicion: "1962-05-01",
+              casa:"Marvel",
+              indice:3
+            },
+            {
+              nombre: "Sinestro",
+              bio: "Genio malvado enemigo de linterna verde",
+              img: "assets/img/sinestro.png",
+              aparicion: "1940-06-01",
+              casa: "DC",
+              indice:4
+            },
+            {
+              nombre: "Green goblin",
+              bio: "Enemigo con identidad sospechada que atormenta a Spider man",
+              img: "assets/img/green-goblin.png",
+              aparicion: "1962-08-01",
+              casa: "Marvel",
+              indice:5
+            },
+            {
+              nombre: "Magneto",
+              bio: "Uno de los villanos más dificiles que ha enfrentado Wolverine dada su desventaja clara por el poder de atraer metales que el primero de ellos posee.",
+              img: "assets/img/Magneto.png",
+              aparicion: "1974-11-01",
+              casa: "Marvel",
+              indice:6
+            }
+    ];
+
     constructor(){
         
     }
@@ -72,13 +132,16 @@ export class HeroService {
     getHeros():Hero[]{
         return this.hero;
     }
+    getVillains():Hero[]{
+      return this.villain;
+    }
 
     getHero(id:number){
         return this.hero[id];   
     }
-    /*getHeroIndex():Hero{
-      return this.hero;   
-  }*/
+    getVillain(id:number){
+      return this.villain[id];   
+  }
 
     buscarHeroe(palabra:string):Hero[]{
       let heroArr:Hero[] = [];
@@ -87,6 +150,12 @@ export class HeroService {
         let nombre = hero.nombre.toLowerCase();
         if(nombre.indexOf(palabra)>=0){
            heroArr.push(hero);
+        }
+      }
+      for( let villain of this.villain){
+        let nombre = villain.nombre.toLowerCase();
+        if(nombre.indexOf(palabra)>=0){
+           heroArr.push(villain);
         }
       }
       return heroArr;

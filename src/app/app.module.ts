@@ -18,6 +18,8 @@ import { HeroService } from './service/hero.service';
 import { HeroDetailsComponent } from './components/hero-details/hero-details.component';
 import { HeroesResultsComponent } from './components/heroes-results/heroes-results.component';
 import { RouterModule, Routes } from '@angular/router';
+import { VillainsComponent } from './components/villains/villains.component';
+import { VillainDetailsComponent } from './components/villain-details/villain-details.component';
 
 
 
@@ -29,7 +31,9 @@ import { RouterModule, Routes } from '@angular/router';
     HeroesComponent,
     AboutComponent,
     HeroDetailsComponent,
-    HeroesResultsComponent    
+    HeroesResultsComponent,
+    VillainsComponent,
+    VillainDetailsComponent    
   ],
   imports: [
     BrowserModule,
