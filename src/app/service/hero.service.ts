@@ -12,7 +12,8 @@ export class HeroService {
               img: "assets/img/aquaman.png",
               aparicion: "1941-11-01",
               casa:"DC",
-              indice:0
+              indice:0,
+              tipo: true
             },
             {
               nombre: "Batman",
@@ -20,7 +21,8 @@ export class HeroService {
               img: "assets/img/batman.png",
               aparicion: "1939-05-01",
               casa:"DC",
-              indice:1
+              indice:1,
+              tipo: true
             },
             {
               nombre: "Daredevil",
@@ -28,7 +30,8 @@ export class HeroService {
               img: "assets/img/daredevil.png",
               aparicion: "1964-01-01",
               casa: "Marvel",
-              indice:2
+              indice:2,
+              tipo: true
             },
             {
               nombre: "Hulk",
@@ -36,7 +39,8 @@ export class HeroService {
               img: "assets/img/hulk.png",
               aparicion: "1962-05-01",
               casa:"Marvel",
-              indice:3
+              indice:3,
+              tipo: true
             },
             {
               nombre: "Linterna Verde",
@@ -44,7 +48,8 @@ export class HeroService {
               img: "assets/img/linterna-verde.png",
               aparicion: "1940-06-01",
               casa: "DC",
-              indice:4
+              indice:4,
+              tipo: true
             },
             {
               nombre: "Spider-Man",
@@ -52,7 +57,8 @@ export class HeroService {
               img: "assets/img/spiderman.png",
               aparicion: "1962-08-01",
               casa: "Marvel",
-              indice:5
+              indice:5,
+              tipo: true
             },
             {
               nombre: "Wolverine",
@@ -60,19 +66,17 @@ export class HeroService {
               img: "assets/img/wolverine.png",
               aparicion: "1974-11-01",
               casa: "Marvel",
-              indice:6
-            }
-    ];
-
-    private villain:Hero[]=
-        [
+              indice:6,
+              tipo: true
+            },
             {
               nombre: "Black Manta",
               bio: "Aquaman enemy.",
               img: "assets/img/Black_Manta.png",
               aparicion: "1941-11-01",
               casa:"DC",
-              indice:0
+              indice:7,
+              tipo: false
             },
             {
               nombre: "Joker",
@@ -80,7 +84,8 @@ export class HeroService {
               img: "assets/img/joker.png",
               aparicion: "1939-05-01",
               casa:"DC",
-              indice:1
+              indice:8,
+              tipo: false
             },
             {
               nombre: "Kingpin",
@@ -88,7 +93,8 @@ export class HeroService {
               img: "assets/img/kingpin.png",
               aparicion: "1964-01-01",
               casa: "Marvel",
-              indice:2
+              indice:9,
+              tipo: false
             },
             {
               nombre: "Abomination",
@@ -96,7 +102,8 @@ export class HeroService {
               img: "assets/img/abomination.png",
               aparicion: "1962-05-01",
               casa:"Marvel",
-              indice:3
+              indice:10,
+              tipo: false
             },
             {
               nombre: "Sinestro",
@@ -104,7 +111,8 @@ export class HeroService {
               img: "assets/img/sinestro.png",
               aparicion: "1940-06-01",
               casa: "DC",
-              indice:4
+              indice:11,
+              tipo: false
             },
             {
               nombre: "Green goblin",
@@ -112,7 +120,8 @@ export class HeroService {
               img: "assets/img/green-goblin.png",
               aparicion: "1962-08-01",
               casa: "Marvel",
-              indice:5
+              indice:12,
+              tipo: false
             },
             {
               nombre: "Magneto",
@@ -120,9 +129,12 @@ export class HeroService {
               img: "assets/img/Magneto.png",
               aparicion: "1974-11-01",
               casa: "Marvel",
-              indice:6
+              indice:13,
+              tipo: false
             }
     ];
+
+
 
     constructor(){
         
@@ -132,16 +144,11 @@ export class HeroService {
     getHeros():Hero[]{
         return this.hero;
     }
-    getVillains():Hero[]{
-      return this.villain;
-    }
 
     getHero(id:number){
         return this.hero[id];   
     }
-    getVillain(id:number){
-      return this.villain[id];   
-  }
+
 
     buscarHeroe(palabra:string):Hero[]{
       let heroArr:Hero[] = [];
@@ -152,12 +159,7 @@ export class HeroService {
            heroArr.push(hero);
         }
       }
-      for( let villain of this.villain){
-        let nombre = villain.nombre.toLowerCase();
-        if(nombre.indexOf(palabra)>=0){
-           heroArr.push(villain);
-        }
-      }
+
       return heroArr;
     }
 
@@ -169,5 +171,6 @@ export interface Hero{
     img:string,
     aparicion:string,
     casa:string,
-    indice: Number
+    indice: Number,
+    tipo: Boolean
 }

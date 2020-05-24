@@ -6,7 +6,6 @@ import { HeroesComponent } from './components/heroes/heroes.component';
 import { VillainsComponent } from './components/villains/villains.component';
 import { HeroDetailsComponent } from './components/hero-details/hero-details.component';
 import { HeroesResultsComponent } from './components/heroes-results/heroes-results.component';
-import { VillainDetailsComponent } from './components/villain-details/villain-details.component';
 
 
 const APP_ROUTE: Routes = [
@@ -16,7 +15,6 @@ const APP_ROUTE: Routes = [
     { path: 'villains', component: VillainsComponent },
     { path: 'results/:resultado', component: HeroesResultsComponent },
     { path: 'detalles/:id', component:  HeroDetailsComponent },
-    { path: 'detallesv/:id', component:  VillainDetailsComponent },
     { path: '**', pathMatch: 'full', redirectTo:'home' }
 ];
 

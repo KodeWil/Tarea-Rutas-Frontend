@@ -15,8 +15,7 @@ export class VillainsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.villain = this._heroService.getVillains();
-    console.log(this.villain);
+
   }
 
 }

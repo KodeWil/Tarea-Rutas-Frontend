@@ -13,7 +13,7 @@ export class HeroesComponent implements OnInit {
   
   // hero:any[]=[];
   hero:Hero[]=[];
-  constructor( private _heroService: HeroService, private _router: Router) { 
+  constructor( private _heroService: HeroService, public _router: Router) { 
 
   }
 
